@@ -26,13 +26,13 @@ class FCM extends Component {
 			);
 		}
 
-		if (firebase.messaging.isSupported()) {
-			firebaseCloudMessaging.init();
-			const messaging = firebase.messaging();
-			messaging.onMessage((payload) => {
-				this.createNotification(payload);
-			});
-		}
+		// if (firebase.messaging.isSupported()) {
+		// 	firebaseCloudMessaging.init();
+		// 	const messaging = firebase.messaging();
+		// 	messaging.onMessage((payload) => {
+		// 		this.createNotification(payload);
+		// 	});
+		// }
 	}
 
 	render() {

@@ -1,5 +1,5 @@
 import { toast } from "react-toastify";
-import { instance } from "./axios";
+import instance from "./axios";
 
 export function throttle(fn, delay) {
 	let makeCall = true;
