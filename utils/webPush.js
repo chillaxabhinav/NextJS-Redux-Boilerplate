@@ -11,20 +11,20 @@ const firebaseCloudMessaging = {
 	init: asyncErrorHandler(async function () {
 		if (!firebase.apps.length) {
 			firebase.initializeApp({
-				apiKey: "AIzaSyC-8yqeoMshfvno7sFClct3guI42fA9GFo",
-				authDomain: "next-ead8b.firebaseapp.com",
-				databaseURL: "https://next-ead8b.firebaseio.com",
-				projectId: "next-ead8b",
-				storageBucket: "next-ead8b.appspot.com",
-				messagingSenderId: "829697674509",
-				appId: "1:829697674509:web:1dd10c589230ecbc1f7444",
+				// apiKey: "AIzaSyC-8yqeoMshfvno7sFClct3guI42fA9GFo",
+				// authDomain: "next-ead8b.firebaseapp.com",
+				// databaseURL: "https://next-ead8b.firebaseio.com",
+				// projectId: "next-ead8b",
+				// storageBucket: "next-ead8b.appspot.com",
+				// messagingSenderId: "829697674509",
+				// appId: "1:829697674509:web:1dd10c589230ecbc1f7444",
 			});
 
-			try{
+			try {
 				const messaging = firebase.messaging();
-				messaging.usePublicVapidKey(
-					"BLGc4mkUhebKaitCJIQ4VwKKeLZJHNQX0-s_NY3dSUOkp4FSJFECb78HfirLUTkcE3-MjfZaLsfZOIffiv0H1W8",
-				);
+				// messaging.usePublicVapidKey(
+				// 	"BLGc4mkUhebKaitCJIQ4VwKKeLZJHNQX0-s_NY3dSUOkp4FSJFECb78HfirLUTkcE3-MjfZaLsfZOIffiv0H1W8",
+				// );
 				const tokenInLocalForage = await this.tokenInLocalForage();
 
 				if (tokenInLocalForage !== null) {
@@ -41,12 +41,10 @@ const firebaseCloudMessaging = {
 						console.log(`FCM TOKEN ==> ${fcm_token}`);
 						return fcm_token;
 					}
-				}
-				else {
+				} else {
 					throw new Error("Notification Permission Denied !");
 				}
-			}
-			catch(e){
+			} catch (e) {
 				console.error(error);
 				return null;
 			}
