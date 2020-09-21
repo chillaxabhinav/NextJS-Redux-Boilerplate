@@ -16,7 +16,7 @@ module.exports = {
 	plugins: ["react", "eslint-plugin-import"],
 	rules: {
 		quotes: [2, "double", { avoidEscape: true }],
-		indent: [2, "tab", { SwitchCase: 1, VariableDeclarator: 1 }],
+		indent: 0,
 		semi: ["error", "always"],
 		"linebreak-style": ["error", "unix"],
 		"no-unused-vars": ["error", { vars: "all", args: "none" }],
@@ -25,5 +25,7 @@ module.exports = {
 		"no-useless-constructor": "error",
 		"no-undefined": "error",
 		"react/prop-types": 0,
+		"no-tabs": 0,
+		"react-hooks/exhaustive-deps": "off",
 	},
 };
